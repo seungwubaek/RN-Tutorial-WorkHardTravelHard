@@ -15,7 +15,7 @@ import {
   StyledTextInputEditToDo,
   StyledViewEditToDoWrapper,
   StyledTouchableOpacityEditToDoCancelIcon,
-  StyledTouchableOpacityToDoFinishIcon,
+  StyledTouchableOpacityToDoWithFinishIcon,
   StyledTextToDoFinishIcon,
 } from './AppBody.style';
 
@@ -171,12 +171,8 @@ const AppBody = (props) => {
                     </StyledTouchableOpacityEditToDoCancelIcon>
                   </StyledViewEditToDoWrapper>
                 ) : (
-                <StyledTouchableOpacityToDoFinishIcon
+                <StyledTouchableOpacityToDoWithFinishIcon
                   onPress={() => toggleToDoFinished(key)}
-                  hitSlop={{
-                    top: 10,
-                    bottom: 5,
-                  }}
                 >
                   {
                     toDo.finished ? (
@@ -190,7 +186,7 @@ const AppBody = (props) => {
                   >
                     {toDo.text}
                   </StyledTextToDoFinishIcon>
-                </StyledTouchableOpacityToDoFinishIcon>
+                </StyledTouchableOpacityToDoWithFinishIcon>
                 )
               }
               <StyledViewToDoBtnGroup>

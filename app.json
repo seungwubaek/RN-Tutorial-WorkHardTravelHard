@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "RN-Tutorial-WorkHardTravelHard",
-    "slug": "RN-Tutorial-WorkHardTravelHard",
+    "slug": "whth",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,29 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sammy-baek.whth"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sammy_baek.whth"
     },
     "web": {
       "favicon": "./assets/icon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4a13d92d-8de0-400e-a0a7-81590a12c240"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/4a13d92d-8de0-400e-a0a7-81590a12c240"
     }
   }
 }

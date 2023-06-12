@@ -74,7 +74,14 @@ export const StyledTouchableOpacityEditToDoCancelIcon = styled(StyledTouchableOp
 
 // ToDo Finish Icon
 
-export const StyledTouchableOpacityToDoFinishIcon = styled(StyledTouchableOpacityToDoIconCommon)``;
+export const StyledTouchableOpacityToDoWithFinishIcon = styled(StyledTouchableOpacityToDoIconCommon)`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  margin-right: ${toDoItem.iconGap}px;
+`;
 
 export const StyledTextToDoFinishIcon = styled(StyledTextGlobal)`
   font-size: ${toDoItem.fontSize}px;
