@@ -18,7 +18,7 @@ export const StyledViewTextInputWrapper = styled.View``;
 
 export const StyledTextInput = styled.TextInput.attrs((props) => {
   return {
-    paddingVertical: 5,
+    paddingVertical: 10,
     paddingHorizontal: 20,
     marginVertical: 20,
   }
@@ -26,6 +26,9 @@ export const StyledTextInput = styled.TextInput.attrs((props) => {
   background-color: ${({ theme }) => theme.colors.textInputBackground};
   border-radius: 30px;
   font-size: ${toDoCreation.fontSize}px;
+  /* for RNW */
+  padding: 5px 20px;
+  margin: 20px 0;
 `;
 
 export const StyledScrollView = styled.ScrollView``;
@@ -34,9 +37,8 @@ export const StyledScrollView = styled.ScrollView``;
 
 export const StyledViewToDoItem = styled.View.attrs((props) => {
   return {
-    paddingVertical: props.editing ? 5 : 10,
-    paddingHorizontal: 15,
     paddingLeft: 10,
+    paddingRight: 15,
   }
 })`
   min-height: ${toDoItem.minHeight}px;
@@ -46,6 +48,8 @@ export const StyledViewToDoItem = styled.View.attrs((props) => {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  /* for RNW */
+  padding: 0 15px 0 10px;
 `;
 
 // EditToDo
@@ -68,6 +72,8 @@ export const StyledTextInputEditToDo = styled.TextInput.attrs((props) => {
   font-size: ${toDoItem.fontSize}px;
   background-color: ${({ theme }) => theme.colors.textInputBackground};
   border-radius: 12px;
+  /* for RNW */
+  padding: 0 10px;
 `;
 
 export const StyledTouchableOpacityEditToDoCancelIcon = styled(StyledTouchableOpacityToDoIconCommon)``;

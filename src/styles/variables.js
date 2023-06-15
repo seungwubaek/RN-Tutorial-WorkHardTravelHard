@@ -5,5 +5,5 @@ export const toDoCreation = {
 export const toDoItem = {
   fontSize: 14,
   iconGap: 12,
-  minHeight: 40,
+  minHeight: 50,
 }

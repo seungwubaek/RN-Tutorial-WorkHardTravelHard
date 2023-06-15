@@ -7,6 +7,8 @@ export const StyledViewContainer = styled.View.attrs((props) => {  // My Goodnes
 )`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
+  /* for RNW */
+  padding: 0 20px;
 `;
 
 export const StyledViewHeader = styled.View`
