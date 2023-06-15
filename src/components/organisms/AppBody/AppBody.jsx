@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
+import { Alert, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Alert } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import { Fontisto, Feather, FontAwesome } from '@expo/vector-icons';
 
@@ -120,20 +120,29 @@ const AppBody = (props) => {
   };
 
   const deleteToDo = async (toDoId) => {
-    Alert.alert('Delete To Do?', 'Are you sure?', [
-      { text: 'Cancel' },
-      {
-        text: 'Delete',
-        style: 'destructive',
-        onPress: async () => {
-          const newToDos = {...toDos};
-          delete newToDos[toDoId];
-          setToDos(newToDos);
-          await storeToDos(newToDos);
+    if(Platform.OS === 'web') {
+      const ok = confirm('Do you want to delete this To Do?');
+      if(ok) {
+        const newToDos = {...toDos};
+        delete newToDos[toDoId];
+        setToDos(newToDos);
+        await storeToDos(newToDos);
+      }
+    } else {
+      Alert.alert('Delete To Do?', 'Are you sure?', [
+        { text: 'Cancel' },
+        {
+          text: 'Delete',
+          style: 'destructive',
+          onPress: async () => {
+            const newToDos = {...toDos};
+            delete newToDos[toDoId];
+            setToDos(newToDos);
+            await storeToDos(newToDos);
+          },
         },
-      },
-    ]);
-    return
+      ]);
+    }
   };
 
   return (
